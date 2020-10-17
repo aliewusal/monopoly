@@ -13,6 +13,20 @@ namespace monopoly
         public MainPage()
         {
             InitializeComponent();
+            Task.Run(()=> {
+                BG.Scale = 1.1;
+                while (true)
+                {
+                    BG.TranslateTo(-50, 0, 10000).Wait();
+
+                    BG.TranslateTo(50, 0, 10000).Wait();
+                }
+
+            });
+
         }
+
+
+
     }
 }

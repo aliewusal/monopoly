@@ -11,7 +11,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.1141" />
+    <None Remove="resource\fonts\AmericanCaptain.ttf" />
+    <None Remove="resource\img\background.png" />
+    <None Remove="resource\img\fon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="resource\fonts\AmericanCaptain.ttf" />
+    <EmbeddedResource Include="resource\img\background.png" />
+    <EmbeddedResource Include="resource\img\fon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1560" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
 </Project>

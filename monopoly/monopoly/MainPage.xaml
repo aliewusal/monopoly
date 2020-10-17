@@ -1,24 +1,155 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="monopoly.MainPage">
+             x:Class="monopoly.MainPage" 
+             xmlns:local="clr-namespace:monopoly">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-    </StackLayout>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image x:Name="BG"
+                   Source="background.png"
+                   Aspect="Fill"/>
+            
+            <Button Text="?"
+                    FontSize="22"
+                    FontAttributes="Bold"
+                    BorderColor="Black"
+                    BackgroundColor="Black"
+                    Opacity="0.5"
+                    BorderWidth="3"
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    Margin="3,13,0,0"/>
+            <Button Text="?"
+                    FontSize="22"
+                    FontAttributes="Bold"
+                    BorderColor="Black"
+                    BackgroundColor="#e7d014"
+                    BorderWidth="3"
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    Margin="8"/>
+
+            <Label Text="МЕНЮ"
+                   FontFamily="ACaptain"
+                   FontSize="Header"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   TextColor="Black"
+                   Opacity="0.5"
+                   FontAttributes="Bold"
+                   AbsoluteLayout.LayoutBounds="0.45, 0.11"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Label Text="МЕНЮ"
+                   FontFamily="ACaptain"
+                   FontSize="Header"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   TextColor="#e7d014"
+                   FontAttributes="Bold"
+                   AbsoluteLayout.LayoutBounds="0.5, 0.1"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            
+            <Button BorderColor="Black"
+                    BackgroundColor="Black"
+                    Opacity="0.5"
+                    BorderWidth="1"
+                    CornerRadius="35"
+                    HeightRequest="70"
+                    WidthRequest="300"
+                    AbsoluteLayout.LayoutBounds="0.45, 0.36"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    IsEnabled="False"/>
+            <Button Text="ИГРА"
+                    FontSize="35"
+                    FontFamily="ACaptain"
+                    FontAttributes="Bold"
+                    BorderColor="Black"
+                    BackgroundColor="#00c187"
+                    BorderWidth="1"
+                    CornerRadius="35"
+                    HeightRequest="70"
+                    WidthRequest="300"
+                    AbsoluteLayout.LayoutBounds="0.5, 0.35"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+            <Button BorderColor="Black"
+                    BackgroundColor="Black"
+                    Opacity="0.5"
+                    BorderWidth="1"
+                    CornerRadius="35"
+                    HeightRequest="70"
+                    WidthRequest="300"
+                    AbsoluteLayout.LayoutBounds="0.45, 0.53"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    IsEnabled="False"/>
+            <Button Text="ПРОФИЛЬ"
+                    FontSize="35"
+                    FontFamily="ACaptain"
+                    FontAttributes="Bold"
+                    BorderColor="Black"
+                    BackgroundColor="#00c187"
+                    BorderWidth="1"
+                    CornerRadius="35"
+                    HeightRequest="70"
+                    WidthRequest="300"
+                    AbsoluteLayout.LayoutBounds="0.5, 0.52"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+            <Button BorderColor="Black"
+                    BackgroundColor="Black"
+                    Opacity="0.5"
+                    BorderWidth="1"
+                    CornerRadius="35"
+                    HeightRequest="70"
+                    WidthRequest="300"
+                    AbsoluteLayout.LayoutBounds="0.45, 0.70"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    IsEnabled="False"/>
+            <Button Text="ДРУЗЬЯ"
+                    FontSize="35"
+                    FontFamily="ACaptain"
+                    FontAttributes="Bold"
+                    BorderColor="Black"
+                    BackgroundColor="#00c187"
+                    BorderWidth="1"
+                    CornerRadius="35"
+                    HeightRequest="70"
+                    WidthRequest="300"
+                    AbsoluteLayout.LayoutBounds="0.5, 0.69"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+            <Button BorderColor="Black"
+                    BackgroundColor="Black"
+                    Opacity="0.5"
+                    BorderWidth="1"
+                    CornerRadius="35"
+                    HeightRequest="70"
+                    WidthRequest="300"
+                    AbsoluteLayout.LayoutBounds="0.45, 0.87"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    IsEnabled="False"/>
+            <Button Text="НАСТРОЙКИ"
+                    FontSize="35"
+                    FontFamily="ACaptain"
+                    FontAttributes="Bold"
+                    BorderColor="Black"
+                    BackgroundColor="#00c187"
+                    BorderWidth="1"
+                    CornerRadius="35"
+                    HeightRequest="70"
+                    WidthRequest="300"
+                    AbsoluteLayout.LayoutBounds="0.5, 0.86"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+            <!--<Path Fill="#007fff" Stroke="#007fff" Aspect="Uniform" HeightRequest="50" Data="M178.5,140.25v-102L0,216.75l178.5,178.5V290.7c127.5,0,216.75,40.8,280.5,130.05C433.5,293.25,357,165.75,178.5,140.25z"/>-->
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+    
 
 </ContentPage>
