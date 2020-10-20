@@ -9,10 +9,10 @@ using System.Web.Http;
 
 namespace ServerMonopoly.Controllers
 {
-    public class ValuesController : ApiController
+    public class UsersController : ApiController
     {
         private UserModel userModel;
-        public ValuesController()
+        public UsersController()
         {
             userModel = new UserModel();
         }
