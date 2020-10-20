@@ -22,10 +22,18 @@ namespace ServerMonopoly.Models
 
         public List<User> GetUsers()
         {
-            User user = new User();
-            user.Name = "User1";
-            user.Id = 1;
-            users.Add(user);
+            dbConnection.Open();
+            SQLiteCommand load = dbConnection.CreateCommand();
+            load.CommandText = "SELECT * FROM Users";
+            SQLiteDataReader sql = load.ExecuteReader();
+            while (sql.Read())
+            {
+                User user = new User();
+                user.Id = Convert.ToInt32(sql["Id"]);
+                user.Name = Convert.ToString(sql["Name"]);
+                users.Add(user);
+            }
+            dbConnection.Close();
             return users;
         }
     }
