@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ServerMonopoly.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -9,6 +11,11 @@ namespace ServerMonopoly.Controllers
 {
     public class ValuesController : ApiController
     {
+        private UserModel userModel;
+        public ValuesController()
+        {
+            userModel = new UserModel();
+        }
         // GET api/values
         public IEnumerable<string> Get()
         {
@@ -19,6 +26,11 @@ namespace ServerMonopoly.Controllers
         public string Get(int id)
         {
             return "value";
+        }
+        [Route("api/Users/")]
+        public IEnumerable<User> GetUsers()
+        {
+            return userModel.GetUsers();
         }
 
         // POST api/values
