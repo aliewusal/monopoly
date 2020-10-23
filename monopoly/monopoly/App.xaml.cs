@@ -9,8 +9,7 @@ namespace monopoly
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new Menu());
         }
 
         protected override void OnStart()

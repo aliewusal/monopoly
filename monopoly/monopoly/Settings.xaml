@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="monopoly.Settings"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image x:Name="BG"
+                   Source="background.png"
+                   Aspect="Fill"/>
+            <Label Text="НАСТРОЙКИ"
+                   FontFamily="ACaptain"
+                   FontSize="60"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   TextColor="Black"
+                   Opacity="0.5"
+                   FontAttributes="Bold"
+                   AbsoluteLayout.LayoutBounds="0.45, 0.02"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Label Text="НАСТРОЙКИ"
+                   FontFamily="ACaptain"
+                   FontSize="60"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   TextColor="#e7d014"
+                   FontAttributes="Bold"
+                   AbsoluteLayout.LayoutBounds="0.5, 0.01"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+            <BoxView BackgroundColor="#00c187"  HeightRequest="4"
+                     WidthRequest="415"
+                     AbsoluteLayout.LayoutBounds="0.5, 0.12"
+                     AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+
+
+            
+            <Label Text="МУЗЫКА"
+                        FontFamily="ACaptain"
+                        FontSize="60"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="CenterAndExpand"
+                        TextColor="Black"
+                        Opacity="0.5"
+                        FontAttributes="Bold"
+                        AbsoluteLayout.LayoutBounds="0.45, 0.16"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Label Text="МУЗЫКА"
+                        FontFamily="ACaptain"
+                        FontSize="60"
+                        VerticalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Center"
+                        TextColor="#e7d014"
+                        FontAttributes="Bold"
+                        AbsoluteLayout.LayoutBounds="0.5, 0.15"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Slider WidthRequest="300"
+                        AbsoluteLayout.LayoutBounds="0.5, 0.25"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                
+                
+                
+            <Label Text="ЗВУК FX"
+                        FontFamily="ACaptain"
+                        FontSize="60"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="CenterAndExpand"
+                        TextColor="Black"
+                        Opacity="0.5"
+                        FontAttributes="Bold"
+                        AbsoluteLayout.LayoutBounds="0.45, 0.36"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Label Text="ЗВУК FX"
+                        FontFamily="ACaptain"
+                        FontSize="60"
+                        VerticalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Center"
+                        TextColor="#e7d014"
+                        FontAttributes="Bold"
+                        AbsoluteLayout.LayoutBounds="0.5, 0.35"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Slider WidthRequest="300"
+                        AbsoluteLayout.LayoutBounds="0.5, 0.43"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                
+
+                
+            <CheckBox Scale="2.5" Color="Black"
+                        Opacity="0.5"
+                        AbsoluteLayout.LayoutBounds="0.17, 0.56"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <CheckBox Scale="2.5" Color="#00c187"
+                        AbsoluteLayout.LayoutBounds="0.2, 0.55"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Label Text="ТЕКСТ"
+                        FontFamily="ACaptain"
+                        FontSize="60"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="CenterAndExpand"
+                        TextColor="Black"
+                        Opacity="0.5"
+                        FontAttributes="Bold"
+                        AbsoluteLayout.LayoutBounds="0.45, 0.56"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Label Text="ТЕКСТ"
+                        FontFamily="ACaptain"
+                        FontSize="60"
+                        VerticalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Center"
+                        TextColor="#e7d014"
+                        FontAttributes="Bold"
+                        AbsoluteLayout.LayoutBounds="0.5, 0.55"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+
+
+
+            <CheckBox Scale="2.5" Color="Black"
+                        Opacity="0.5"
+                        AbsoluteLayout.LayoutBounds="0.17, 0.71"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <CheckBox Scale="2.5" Color="#00c187"
+                        AbsoluteLayout.LayoutBounds="0.2, 0.7"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Label Text="ТЕКСТ1"
+                        FontFamily="ACaptain"
+                        FontSize="60"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="CenterAndExpand"
+                        TextColor="Black"
+                        Opacity="0.5"
+                        FontAttributes="Bold"
+                        AbsoluteLayout.LayoutBounds="0.45, 0.72"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Label Text="ТЕКСТ1"
+                        FontFamily="ACaptain"
+                        FontSize="60"
+                        VerticalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Center"
+                        TextColor="#e7d014"
+                        FontAttributes="Bold"
+                        AbsoluteLayout.LayoutBounds="0.5, 0.71"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+            <CheckBox Scale="2.5" Color="Black"
+                        Opacity="0.5"
+                        AbsoluteLayout.LayoutBounds="0.17, 0.86"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <CheckBox Scale="2.5" Color="#00c187"
+                        AbsoluteLayout.LayoutBounds="0.2, 0.85"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Label Text="ТЕКСТ2"
+                        FontFamily="ACaptain"
+                        FontSize="60"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="CenterAndExpand"
+                        TextColor="Black"
+                        Opacity="0.5"
+                        FontAttributes="Bold"
+                        AbsoluteLayout.LayoutBounds="0.45, 0.88"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Label Text="ТЕКСТ2"
+                        FontFamily="ACaptain"
+                        FontSize="60"
+                        VerticalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Center"
+                        TextColor="#e7d014"
+                        FontAttributes="Bold"
+                        AbsoluteLayout.LayoutBounds="0.5, 0.87"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
