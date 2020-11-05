@@ -1,8 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
              x:Class="monopoly.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="buttonStandart" TargetType="Button">
+                <Setter Property="WidthRequest" Value="300" />
+                <Setter Property="HeightRequest" Value="70" />
+                <Setter Property="CornerRadius" Value="35" />
+                <Setter Property="BorderWidth" Value="1" />
 
+                <Setter Property="BackgroundColor" Value="#00C187" />
+                <Setter Property="BorderColor" Value="#254E5C" />
+
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontFamily" Value="ACaptain" />
+            </Style>
+
+            <Style x:Key="imageButtonStandart" TargetType="ImageButton">
+                <Setter Property="WidthRequest" Value="300" />
+                <Setter Property="HeightRequest" Value="70" />
+                <Setter Property="CornerRadius" Value="35" />
+                <Setter Property="BorderWidth" Value="1" />
+
+                <Setter Property="BackgroundColor" Value="#00C187" />
+                <Setter Property="BorderColor" Value="Black" />
+            </Style>
+
+            <Style x:Key="imageButtonLobby" TargetType="ImageButton">
+                <Setter Property="WidthRequest" Value="320" />
+                <Setter Property="HeightRequest" Value="80" />
+                <Setter Property="CornerRadius" Value="35" />
+                <Setter Property="BorderWidth" Value="1.5" />
+
+                <Setter Property="BackgroundColor" Value="#aa00C187" />
+                <Setter Property="BorderColor" Value="#254E5C" />
+            </Style>
+
+            <sh:SingleShade x:Key="ShadowBottom"
+                        BlurRadius="2"
+                        Opacity="0.45"
+                        Color="Black"
+                        Offset="-5,5" />
+
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

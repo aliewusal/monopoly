@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="monopoly.View.Game"
+             xmlns:local="clr-namespace:monopoly.ViewModel"
+             xmlns:controls="clr-namespace:monopoly.View.Controls"
+             xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             NavigationPage.HasNavigationBar="False" BackgroundColor="#330757">
+    <!-- загрузка ресурсов -->
+    <!-- таймер -->
+    <!-- https://docs.microsoft.com/ru-ru/xamarin/xamarin-forms/user-interface/collectionview/layout#vertical-list -->
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="160"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+
+            <Image x:Name="BG"
+                   Grid.Row="0" Grid.RowSpan="3"
+                   Source="background.png"
+                   Aspect="AspectFill"/>
+
+            <BoxView BackgroundColor="Tan" Grid.Row="1"/>
+            <Grid Grid.Row="1" RowSpacing="1" ColumnSpacing="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="0"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="1"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="2"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="3"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="4"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="5"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="6"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="7"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="8"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="9"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="10"/>
+
+                <BoxView BackgroundColor="SeaShell" Grid.Row="0" Grid.Column="1"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="0" Grid.Column="2"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="0" Grid.Column="3"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="0" Grid.Column="4"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="0" Grid.Column="5"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="0" Grid.Column="6"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="0" Grid.Column="7"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="0" Grid.Column="8"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="0" Grid.Column="9"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="0" Grid.Column="10"/>
+
+                <BoxView BackgroundColor="SeaShell" Grid.Row="1" Grid.Column="10"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="2" Grid.Column="10"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="3" Grid.Column="10"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="4" Grid.Column="10"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="5" Grid.Column="10"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="6" Grid.Column="10"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="7" Grid.Column="10"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="8" Grid.Column="10"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="9" Grid.Column="10"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="10" Grid.Column="10"/>
+
+                <BoxView BackgroundColor="SeaShell" Grid.Row="10" Grid.Column="1"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="10" Grid.Column="2"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="10" Grid.Column="3"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="10" Grid.Column="4"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="10" Grid.Column="5"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="10" Grid.Column="6"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="10" Grid.Column="7"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="10" Grid.Column="8"/>
+                <BoxView BackgroundColor="SeaShell" Grid.Row="10" Grid.Column="9"/>
+
+
+            </Grid>
+
+
+
+
+
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="ИГРОК 1"
+                       TextColor="#ff008e"
+                       FontSize="40"
+                       FontFamily="ACaptain"
+                       HorizontalOptions="Center"/>
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="5000$"
+                       TextColor="#ff008e"
+                       FontSize="25"
+                       FontFamily="ACaptain"
+                       Margin="10"
+                       HorizontalOptions="Center"
+                       VerticalOptions="End"/>
+
+                <Label Grid.Row="0" Grid.Column="1"
+                       Text="ИГРОК 1"
+                       TextColor="#00ff00"
+                       FontSize="40"
+                       FontFamily="ACaptain"
+                       HorizontalOptions="Center"/>
+                <Label Grid.Row="0" Grid.Column="1"
+                       Text="5000$"
+                       TextColor="#00ff00"
+                       FontSize="25"
+                       FontFamily="ACaptain"
+                       Margin="10"
+                       HorizontalOptions="Center"
+                       VerticalOptions="End"/>
+
+                <Label Grid.Row="1" Grid.Column="0"
+                       Text="ИГРОК 1"
+                       TextColor="#00e5ff"
+                       FontSize="40"
+                       FontFamily="ACaptain"
+                       HorizontalOptions="Center"/>
+                <Label Grid.Row="1" Grid.Column="0"
+                       Text="5000$"
+                       TextColor="#00e5ff"
+                       FontSize="25"
+                       FontFamily="ACaptain"
+                       Margin="10"
+                       HorizontalOptions="Center"
+                       VerticalOptions="End"/>
+
+                <Label Grid.Row="1" Grid.Column="1"
+                       Text="ИГРОК 1"
+                       TextColor="#e7d113"
+                       FontSize="40"
+                       FontFamily="ACaptain"
+                       HorizontalOptions="Center"/>
+                <Label Grid.Row="1" Grid.Column="1"
+                       Text="5000$"
+                       TextColor="#e7d113"
+                       FontSize="25"
+                       FontFamily="ACaptain"
+                       Margin="10"
+                       HorizontalOptions="Center"
+                       VerticalOptions="End"/>
+            </Grid>
+
+
+
+            <Grid Grid.Row="2" Padding="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <ImageButton Grid.Row="0" Grid.Column="0"
+                             Style="{StaticResource imageButtonStandart}"/>
+                <ImageButton Grid.Row="1" Grid.Column="0"
+                             Style="{StaticResource imageButtonStandart}"/>
+                <ImageButton Grid.Row="2" Grid.Column="0"
+                             Style="{StaticResource imageButtonStandart}"/>
+
+                <Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" Source="cube.png" Aspect="AspectFit"/>
+
+                <ImageButton Grid.Row="0" Grid.Column="2" Source="text1.png" Aspect="AspectFit"
+                             Style="{StaticResource imageButtonStandart}"/>
+                <ImageButton Grid.Row="1" Grid.Column="2"
+                             Style="{StaticResource imageButtonStandart}"/>
+                <ImageButton Grid.Row="2" Grid.Column="2"
+                             Style="{StaticResource imageButtonStandart}"/>
+
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="monopoly.View.Menu"
+             xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             NavigationPage.HasNavigationBar="False" BackgroundColor="#330757">
+
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="140"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Image x:Name="BG" 
+                   Grid.Row="0" Grid.RowSpan="7"
+                   Source="background.png"
+                   Aspect="AspectFill"/>
+
+            <sh:Shadows Grid.Row="0" Margin="8"
+                        CornerRadius="25" 
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        Shades="{StaticResource ShadowBottom}">
+                <Button Text="?" FontSize="22"
+                        HeightRequest="50" WidthRequest="50"
+                        BorderWidth="3" BorderColor="Black"
+                        BackgroundColor="#e7d014"
+                        CornerRadius="25"
+                        FontAttributes="Bold"/>
+            </sh:Shadows>
+
+            <skia:SKCanvasView Grid.Row="1"
+                               x:Name="МЕНЮ"
+                               BindingContext="МЕНЮ"
+                               HeightRequest="140"
+                               WidthRequest="260"
+                               HorizontalOptions="Center"
+                               PaintSurface="PaintText"/>
+
+            <sh:Shadows Grid.Row="2"
+                        CornerRadius="35"
+                        HorizontalOptions="Center"
+                        Shades="{StaticResource ShadowBottom}">
+                <AbsoluteLayout HeightRequest="70" WidthRequest="300"
+                                VerticalOptions="Center">
+                    <ImageButton Style="{StaticResource imageButtonStandart}"
+                                 Command="{Binding OpenLobbyCommand}"/>
+                    <skia:SKCanvasView BindingContext="ИГРА"
+                                       WidthRequest="125" HeightRequest="60"
+                                       AbsoluteLayout.LayoutBounds="0.5, 0.5"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+                </AbsoluteLayout>
+            </sh:Shadows>
+
+            <sh:Shadows Grid.Row="3"
+                        CornerRadius="35"
+                        HorizontalOptions="Center"
+                        Shades="{StaticResource ShadowBottom}">
+                <AbsoluteLayout HeightRequest="70" WidthRequest="300"
+                                VerticalOptions="Center">
+                    <ImageButton Style="{StaticResource imageButtonStandart}"/>
+                    <skia:SKCanvasView BindingContext="ПРОФИЛЬ"
+                                       WidthRequest="220" HeightRequest="60"
+                                       AbsoluteLayout.LayoutBounds="0.5, 0.5"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+                </AbsoluteLayout>
+            </sh:Shadows>
+
+            <sh:Shadows Grid.Row="4"
+                        CornerRadius="35"
+                        HorizontalOptions="Center"
+                        Shades="{StaticResource ShadowBottom}">
+                <AbsoluteLayout HeightRequest="70" WidthRequest="300"
+                                VerticalOptions="Center">
+                    <ImageButton Style="{StaticResource imageButtonStandart}"
+                                 Command="{Binding OpenFriendsCommand}"/>
+                    <skia:SKCanvasView BindingContext="ДРУЗЬЯ"
+                                       WidthRequest="180" HeightRequest="60"
+                                       AbsoluteLayout.LayoutBounds="0.5, 0.5"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+                </AbsoluteLayout>
+            </sh:Shadows>
+
+            <sh:Shadows Grid.Row="5"
+                        CornerRadius="35"
+                        HorizontalOptions="Center"
+                        Shades="{StaticResource ShadowBottom}">
+                <AbsoluteLayout HeightRequest="70" WidthRequest="300"
+                                VerticalOptions="Center">
+                    <ImageButton Style="{StaticResource imageButtonStandart}" 
+                                 Command="{Binding OpenSettingsCommand}"/>
+                    <skia:SKCanvasView BindingContext="НАСТРОЙКИ"
+                                       WidthRequest="260" HeightRequest="60"
+                                       AbsoluteLayout.LayoutBounds="0.5, 0.1"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+                </AbsoluteLayout>
+            </sh:Shadows>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

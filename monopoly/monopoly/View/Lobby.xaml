@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="monopoly.View.Lobby"
+             xmlns:local="clr-namespace:monopoly.ViewModel"
+             xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             NavigationPage.HasNavigationBar="False" BackgroundColor="#330757">
+
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Image x:Name="BG"
+                   Grid.Row="0" Grid.RowSpan="3"
+                   Source="background.png"
+                   Aspect="AspectFill"/>
+
+            <!--<BoxView Color="Red" Grid.Column="0" Grid.Row="0" />
+            <BoxView Color="Blue" Grid.Column="0" Grid.Row="1" />-->
+            
+            <BoxView Grid.Row="0" 
+                     BackgroundColor="#88000000"/>
+            <ImageButton Grid.Row="0" Margin="15"
+                         HorizontalOptions="Start"
+                         VerticalOptions="Center"
+                         BackgroundColor="Transparent"
+                         WidthRequest="45" HeightRequest="40"
+                         Source="back.png"
+                         Command="{Binding BackCommand}"/>
+            <skia:SKCanvasView Grid.Row="0"
+                               x:Name="ЛОББИ"
+                               BindingContext="ЛОББИ"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Start"
+                               HeightRequest="80" WidthRequest="200"
+                               PaintSurface="PaintText"/>
+            <BoxView Grid.Row="0"
+                     HeightRequest="4"
+                     VerticalOptions="End"
+                     BackgroundColor="#00c187"/>
+            <ImageButton Grid.Row="0" Margin="20,0"
+                         HorizontalOptions="End"
+                         VerticalOptions="Center"
+                         WidthRequest="50"
+                         HeightRequest="50"
+                         BorderWidth="1"
+                         CornerRadius="20"
+                         BorderColor="Black"
+                         BackgroundColor="#7700c187"
+                         Command="{Binding BackCommand}"/>
+            <Path Grid.Row="0" Margin="25,0"
+                  Stroke="Black" Fill="#e7d014"
+                  StrokeThickness="1"
+                  Aspect="Uniform"
+                  HeightRequest="40"
+                  WidthRequest="40"
+                  HorizontalOptions="End"
+                  VerticalOptions="Center"
+                  Data="m56 288h136v136c0 26.507812 21.492188 48 48 48s48-21.492188 48-48v-136h136c26.507812 0 48-21.492188 48-48s-21.492188-48-48-48h-136v-136c0-26.507812-21.492188-48-48-48s-48 21.492188-48 48v136h-136c-26.507812 0-48 21.492188-48 48s21.492188 48 48 48zm0 0"/>
+            <BoxView Grid.Row="1" 
+                     BackgroundColor="#4A13C2"/>
+            <Grid Grid.Row="1" Margin="0,0,0,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <sh:Shadows Grid.Row="0" 
+                            Grid.Column="0" 
+                            CornerRadius="35"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Shades="{StaticResource ShadowBottom}">
+                    <AbsoluteLayout HeightRequest="50" WidthRequest="110">
+                        <ImageButton BorderWidth="1"
+                                     Style="{StaticResource imageButtonStandart}"
+                                     WidthRequest="110" HeightRequest="50"
+                                     BorderColor="#e7d014"
+                                     BackgroundColor="#8800c187"
+                                     Command="{Binding }"/>
+                        <skia:SKCanvasView BindingContext="ПУБЛИЧНЫЕ"
+                                           WidthRequest="100" HeightRequest="50"
+                                           AbsoluteLayout.LayoutBounds="0.5, 0.5"
+                                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                                           PaintSurface="PaintText"/>
+                    </AbsoluteLayout>
+                </sh:Shadows>
+                <sh:Shadows Grid.Row="0" 
+                            Grid.Column="1" 
+                            CornerRadius="35"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Shades="{StaticResource ShadowBottom}">
+                    <AbsoluteLayout HeightRequest="50" WidthRequest="110">
+                        <ImageButton BorderWidth="1.5"
+                                     Style="{StaticResource imageButtonStandart}"
+                                     WidthRequest="110" HeightRequest="50"
+                                     BackgroundColor="#8800c187"
+                                     Command="{Binding OpenLobbyCommand}"/>
+                        <skia:SKCanvasView BindingContext="ВСЕ ИГРЫ"
+                                           WidthRequest="100" HeightRequest="50"
+                                           AbsoluteLayout.LayoutBounds="0.5, 0.5"
+                                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                                           PaintSurface="PaintText"/>
+                    </AbsoluteLayout>
+                </sh:Shadows>
+                <sh:Shadows Grid.Row="0" 
+                            Grid.Column="2" 
+                            CornerRadius="35"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Shades="{StaticResource ShadowBottom}">
+                    <AbsoluteLayout HeightRequest="50" WidthRequest="110">
+                        <ImageButton BorderWidth="1.5"
+                                     Style="{StaticResource imageButtonStandart}"
+                                     WidthRequest="110" HeightRequest="50"
+                                     BackgroundColor="#8800c187"
+                                     Command="{Binding OpenLobbyCommand}"/>
+                        <skia:SKCanvasView BindingContext="ПРИВАТНЫЕ"
+                                           WidthRequest="100" HeightRequest="50"
+                                           AbsoluteLayout.LayoutBounds="0.5, 0.5"
+                                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                                           PaintSurface="PaintText"/>
+                    </AbsoluteLayout>
+                </sh:Shadows>
+            </Grid>
+
+
+            <BoxView Grid.Row="1" 
+                     HeightRequest="4"
+                     VerticalOptions="End" 
+                     BackgroundColor="#00c187"/>
+
+            <RefreshView Grid.Row="2" >
+                <CollectionView ItemsSource="{Binding Rooms}"
+                                SelectionMode="None" Header="">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical"
+                                           ItemSpacing="5" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <sh:Shadows CornerRadius="35" Margin="0,10"
+                                        HorizontalOptions="Center"
+                                        Shades="{StaticResource ShadowBottom}">
+                                <AbsoluteLayout HeightRequest="80" WidthRequest="320"
+                                                HorizontalOptions="Center"
+                                                VerticalOptions="Start">
+                                    <ImageButton Style="{StaticResource imageButtonLobby}"
+                                                 Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=OpenGameCommand}}"/>
+
+                                    <Image Source="group.png" Aspect="Fill" 
+                                           HeightRequest="50" WidthRequest="50"
+                                           AbsoluteLayout.LayoutBounds="0.05, 0.5"
+                                           AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                                    <Label Text="{Binding Count}" FontFamily="ACaptain" 
+                                           FontSize="25" TextColor="#E7D014"
+                                           AbsoluteLayout.LayoutBounds="0.26, 0.5"
+                                           AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                                    <skia:SKCanvasView BindingContext="{Binding Name}"
+                                                       WidthRequest="190" HeightRequest="50"
+                                                       AbsoluteLayout.LayoutBounds="0.8, 0.5"
+                                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                                       PaintSurface="PaintText"/>
+                                    <Image Source="{Binding imgPrivate}" Aspect="Fill" 
+                                           HeightRequest="25" WidthRequest="25" Opacity="0.5"
+                                           AbsoluteLayout.LayoutBounds="0.95, 0.5"
+                                           AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                                </AbsoluteLayout>
+                            </sh:Shadows>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

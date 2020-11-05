@@ -2,6 +2,8 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using monopoly.View;
+
 namespace monopoly
 {
     public partial class App : Application
@@ -9,7 +11,7 @@ namespace monopoly
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new Menu());
+            MainPage = new NavigationPage(new View.Menu());
         }
 
         protected override void OnStart()

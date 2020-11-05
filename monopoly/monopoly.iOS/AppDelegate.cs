@@ -22,7 +22,9 @@ namespace monopoly.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Xamarin.Forms.Forms.SetFlags("Shapes_Experimental");
             global::Xamarin.Forms.Forms.Init();
+            Sharpnado.Presentation.Forms.iOS.SharpnadoInitializer.Initialize();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

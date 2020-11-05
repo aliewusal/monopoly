@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="monopoly.View.Settings"
+             xmlns:local="clr-namespace:monopoly.ViewModel"
+             xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             NavigationPage.HasNavigationBar="False" BackgroundColor="#330757">
+
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image x:Name="BG" 
+                   Grid.Row="0" Grid.RowSpan="2"
+                   Source="background.png"
+                   Aspect="AspectFill"/>
+
+            <!--<BoxView Color="Red" Grid.Column="0" Grid.Row="0" />
+            <BoxView Color="Blue" Grid.Column="0" Grid.Row="1" />-->
+
+            <BoxView Grid.Row="0" 
+                     BackgroundColor="#88000000"/>
+            <ImageButton Grid.Row="0" Margin="15"
+                         Source="back.png"
+                         HorizontalOptions="Start"
+                         VerticalOptions="Center"
+                         BackgroundColor="Transparent"
+                         WidthRequest="45" HeightRequest="40"
+                         Command="{Binding BackCommand}"/>
+            <skia:SKCanvasView Grid.Row="0"
+                               x:Name="НАСТРОЙКИ"
+                               BindingContext="НАСТРОЙКИ"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Start"
+                               HeightRequest="70" WidthRequest="260"
+                               PaintSurface="PaintText"/>
+            <BoxView Grid.Row="0" 
+                     BackgroundColor="#00c187"
+                     HeightRequest="4"
+                     VerticalOptions="End"/>
+
+
+            <StackLayout x:Name="asdd" Grid.Row="1">
+                <skia:SKCanvasView PaintSurface="PaintText" 
+                                   Margin="0,45,0,0"
+                                   x:Name="МУЗЫКА"
+                                   BindingContext="МУЗЫКА"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Start"
+                                   HeightRequest="55" WidthRequest="180"/>
+                <Slider WidthRequest="300" Margin="80,0" 
+                        HorizontalOptions="Center"
+                        Minimum="0" Maximum="100"
+                        MaximumTrackColor="Black"
+                        MinimumTrackColor="#00c187"
+                        ThumbColor="#00c187"
+                        Scale="1.4"/>
+
+                <skia:SKCanvasView Margin="0,20,0,0"
+                                   x:Name="ЗВУК_FX"
+                                   BindingContext="ЗВУК FX"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Start"
+                                   HeightRequest="55" WidthRequest="165"
+                                   PaintSurface="PaintText"/>
+                <Slider WidthRequest="300" Margin="80,0" 
+                        VerticalOptions="End"
+                        HorizontalOptions="Center"
+                        Minimum="0" Maximum="100"
+                        MaximumTrackColor="Black"
+                        MinimumTrackColor="#00c187"
+                        ThumbColor="#00c187"
+                        Scale="1.4"/>
+
+
+                <Grid HorizontalOptions="Center" Margin="0,25,0,0" RowSpacing="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+
+                    <CheckBox Grid.Column="0" Grid.Row="0"
+                              HeightRequest="30" WidthRequest="30"
+                              Scale="2"
+                              HorizontalOptions="Center"
+                              Color="#00c187"/>
+                    <skia:SKCanvasView Grid.Column="1" Grid.Row="0"
+                                       x:Name="ТЕКСТ1"
+                                       BindingContext="ТЕКСТ 1"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Start"
+                                       HeightRequest="80" WidthRequest="135"
+                                       PaintSurface="PaintText"/>
+
+                    <CheckBox Grid.Column="0" Grid.Row="1"
+                              Scale="2"
+                              HorizontalOptions="Center"
+                              HeightRequest="30" WidthRequest="30"
+                              Color="#00c187"/>
+                    <skia:SKCanvasView Grid.Column="1" Grid.Row="1"
+                                       x:Name="ТЕКСТ2"
+                                       BindingContext="ТЕКСТ 2"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Start"
+                                       HeightRequest="80" WidthRequest="135"
+                                       PaintSurface="PaintText"/>
+
+                    <CheckBox Grid.Column="0" Grid.Row="2"
+                              Scale="2"
+                              HorizontalOptions="Center"
+                              HeightRequest="30" WidthRequest="30"
+                              Color="#00c187"/>
+                    <skia:SKCanvasView Grid.Column="1" Grid.Row="2"
+                                       x:Name="ТЕКСТ3"
+                                       BindingContext="ТЕКСТ 3"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Start"
+                                       HeightRequest="80" WidthRequest="135"
+                                       PaintSurface="PaintText"/>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

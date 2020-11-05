@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="monopoly.View.Friends"
+             xmlns:local="clr-namespace:monopoly.ViewModel"
+             xmlns:controls="clr-namespace:monopoly.View.Controls"
+             xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             NavigationPage.HasNavigationBar="False" BackgroundColor="#330757">
+
+    <ContentPage.Resources>
+        <DataTemplate x:Key="friend">
+            <sh:Shadows CornerRadius="35" Margin="0,10"
+                        HorizontalOptions="Center"
+                        Shades="{StaticResource ShadowBottom}">
+                <AbsoluteLayout HeightRequest="80" WidthRequest="320"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Start">
+                    <ImageButton Style="{StaticResource imageButtonLobby}"
+                                 Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=OpenGameCommand}}"/>
+                    <Frame CornerRadius="30" Padding="0"
+                           HeightRequest="50"  WidthRequest="50"
+                           AbsoluteLayout.LayoutBounds="0.05, 0.5"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           BorderColor="#254E5C"
+                           BackgroundColor="#E7D014"
+                           IsClippedToBounds="True">
+                        <Image Source="{Binding imgAvatar}" Aspect="Fill"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                    </Frame>
+                    <skia:SKCanvasView BindingContext="{Binding Name}"
+                                       WidthRequest="170" HeightRequest="40"
+                                       AbsoluteLayout.LayoutBounds="0.4, 0.5"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+                    <skia:SKCanvasView BindingContext="{Binding id}"
+                                       WidthRequest="60" HeightRequest="20"
+                                       AbsoluteLayout.LayoutBounds="0.4, 0.95"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+                </AbsoluteLayout>
+            </sh:Shadows>
+        </DataTemplate>
+
+        <DataTemplate x:Key="offerToFriends">
+            <sh:Shadows CornerRadius="35" Margin="0,10"
+                        HorizontalOptions="Center"
+                        Shades="{StaticResource ShadowBottom}">
+                <AbsoluteLayout HeightRequest="80" WidthRequest="320"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Start">
+                    <ImageButton Style="{StaticResource imageButtonLobby}"
+                                 Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=OpenGameCommand}}"/>
+                    <Frame CornerRadius="30" Padding="0"
+                           HeightRequest="50"  WidthRequest="50"
+                           AbsoluteLayout.LayoutBounds="0.05, 0.5"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           BorderColor="#254E5C"
+                           BackgroundColor="#E7D014"
+                           IsClippedToBounds="True">
+                        <Image Source="{Binding imgAvatar}" Aspect="Fill"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                    </Frame>
+                    <skia:SKCanvasView BindingContext="{Binding Name}"
+                                       WidthRequest="170" HeightRequest="40"
+                                       AbsoluteLayout.LayoutBounds="0.4, 0.5"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+                    <skia:SKCanvasView BindingContext="{Binding id}"
+                                       WidthRequest="60" HeightRequest="20"
+                                       AbsoluteLayout.LayoutBounds="0.4, 0.95"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+                    <ImageButton Source="no.png" 
+                                 HeightRequest="34"
+                                 BorderWidth="1"
+                                 BorderColor="#00C187"
+                                 BackgroundColor="#66000000"
+                                 AbsoluteLayout.LayoutBounds="0.8, 0.5"
+                                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                    <ImageButton Source="yes.png"
+                                 BorderWidth="1"
+                                 BorderColor="#00C187"
+                                 BackgroundColor="#66000000"
+                                 HeightRequest="34"
+                                 AbsoluteLayout.LayoutBounds="0.95, 0.5"
+                                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                </AbsoluteLayout>
+            </sh:Shadows>
+        </DataTemplate>
+
+        <controls:FriendDataTemplateSelector x:Key="FriendSelector"
+                                             freind="{StaticResource friend}"
+                                             offerToFreind="{StaticResource offerToFriends}" />
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image x:Name="BG"
+                   Grid.Row="0"
+                   Grid.RowSpan="3"
+                   Source="background.png"
+                   Aspect="AspectFill"/>
+
+            <BoxView Grid.Row="0" 
+                     BackgroundColor="#88000000"/>
+            <ImageButton Grid.Row="0"
+                         HorizontalOptions="Start"
+                         VerticalOptions="Center"
+                         Margin="15"
+                         BackgroundColor="Transparent"
+                         WidthRequest="45"
+                         HeightRequest="40"
+                         Source="back.png"
+                         Command="{Binding BackCommand}"/>
+            <skia:SKCanvasView Grid.Row="0"
+                               x:Name="ДРУЗЬЯ"
+                               BindingContext="ДРУЗЬЯ"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Start"
+                               HeightRequest="80"
+                               WidthRequest="220"
+                               PaintSurface="PaintText"/>
+            <BoxView Grid.Row="0" 
+                     BackgroundColor="#00c187"
+                     HeightRequest="4"
+                     VerticalOptions="End"/>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <sh:Shadows Grid.Column="0"
+                            Grid.ColumnSpan="3"
+                            Margin="10,0,0,0"
+                            CornerRadius="25" 
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Shades="{StaticResource ShadowBottom}">
+                    <Frame CornerRadius="25" 
+                           HeightRequest="50"
+                           WidthRequest="220"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start"
+                           Padding="0"
+                           BorderColor="#254E5C"
+                           BackgroundColor="#AA00C187"
+                           IsClippedToBounds="True">
+                        <Entry HeightRequest="50" WidthRequest="220"
+                               FontFamily="ACaptain"
+                               FontSize="30" MaxLength="10"
+                               VerticalOptions="Start"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="Center"
+                               TextColor="#e7d014"
+                               PlaceholderColor="#e7d014"
+                               Placeholder="ПОИСК"
+                               IsSpellCheckEnabled="False"
+                               IsTextPredictionEnabled ="False"
+                               TextTransform="Uppercase"
+                               Keyboard="Text"/>
+                    </Frame>
+                </sh:Shadows>
+                <sh:Shadows Grid.Column="2"
+                            Grid.ColumnSpan="2"
+                            CornerRadius="25" 
+                            Margin="20,0,0,0"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Shades="{StaticResource ShadowBottom}">
+                    <Button Text="OK" FontSize="30"
+                            Margin="20,0,0,0"
+                            FontFamily="ACaptain"
+                            FontAttributes="Bold"
+                            TextColor="#e7d014"
+                            BorderColor="#254E5C"
+                            BackgroundColor="#AA00C187"
+                            BorderWidth="1"
+                            CornerRadius="25"
+                            HeightRequest="50"
+                            WidthRequest="70"/>
+                </sh:Shadows>
+            </Grid>
+            
+            <RefreshView Grid.Row="2" >
+                <CollectionView ItemsSource="{Binding Friends}"
+                                ItemTemplate="{StaticResource FriendSelector}"
+                                SelectionMode="None" Header="">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical"
+                                           ItemSpacing="5"/>
+                    </CollectionView.ItemsLayout>
+                </CollectionView>
+            </RefreshView>
+            
+            
+        </Grid>
+  </ContentPage.Content>
+</ContentPage>
