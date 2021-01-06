@@ -34,6 +34,16 @@
                 <Setter Property="CornerRadius" Value="35" />
                 <Setter Property="BorderWidth" Value="1.5" />
 
+                <Setter Property="BackgroundColor" Value="#00C187" />
+                <Setter Property="BorderColor" Value="#254E5C" />
+            </Style>
+
+            <Style x:Key="imageButtonProfile" TargetType="ImageButton">
+                <Setter Property="WidthRequest" Value="170" />
+                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="CornerRadius" Value="35" />
+                <Setter Property="BorderWidth" Value="1.5" />
+
                 <Setter Property="BackgroundColor" Value="#aa00C187" />
                 <Setter Property="BorderColor" Value="#254E5C" />
             </Style>

@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="monopoly.View.Profile"
+             xmlns:local="clr-namespace:monopoly.ViewModel"
+             xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             NavigationPage.HasNavigationBar="False" BackgroundColor="#330757">
+
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image x:Name="BG"
+                     Grid.ColumnSpan="2"
+                   Grid.Row="0" Grid.RowSpan="9"
+                   Source="background.png"
+                   Aspect="AspectFill"/>
+
+            <!--<BoxView Color="Red" Grid.Column="0" Grid.Row="0" />
+            <BoxView Color="Blue" Grid.Column="0" Grid.Row="1" />-->
+
+            <BoxView Grid.Row="0"
+                     Grid.ColumnSpan="2"
+                     BackgroundColor="#88000000"/>
+            <ImageButton Grid.Row="0" Margin="15"
+                     Grid.ColumnSpan="2"
+                         HorizontalOptions="Start"
+                         VerticalOptions="Center"
+                         BackgroundColor="Transparent"
+                         WidthRequest="45" HeightRequest="40"
+                         Source="back.png"
+                         Command="{Binding BackCommand}"/>
+            <skia:SKCanvasView Grid.Row="0"
+                     Grid.ColumnSpan="2"
+                               x:Name="ПРОФИЛЬ"
+                               BindingContext="ПРОФИЛЬ"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Start"
+                               HeightRequest="80" WidthRequest="200"
+                               PaintSurface="PaintText"/>
+            <BoxView Grid.Row="0"
+                     Grid.ColumnSpan="2"
+                     HeightRequest="4"
+                     VerticalOptions="End"
+                     BackgroundColor="#00c187"/>
+
+            <AbsoluteLayout HeightRequest="80" WidthRequest="320"
+                            Grid.Row="1"
+                     Grid.ColumnSpan="2"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Start">
+                <Frame CornerRadius="55" Padding="0"
+                           HeightRequest="75"  WidthRequest="75"
+                           AbsoluteLayout.LayoutBounds="0.25, 0.5"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           BorderColor="#254E5C"                       
+                           BackgroundColor="#E7D014"    
+                                             
+                           IsClippedToBounds="True">
+                    <Image Source="{Binding imgAvatar}" Aspect="Fill"
+                           
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                </Frame>
+                <skia:SKCanvasView BindingContext="NAME"
+                               Grid.Row="1" 
+                                       WidthRequest="150" HeightRequest="50"
+                                       AbsoluteLayout.LayoutBounds="0.75, 0.5"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout WidthRequest="320"
+                            HeightRequest="80"
+                            Grid.Row="2"
+                            Grid.ColumnSpan="2"
+                                VerticalOptions="Start">
+                <skia:SKCanvasView BindingContext="РЕЙТИНГ:"
+                                       WidthRequest="300" HeightRequest="60"
+                                       AbsoluteLayout.LayoutBounds="0, 0.5"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+                
+                <skia:SKCanvasView BindingContext="999"
+                                       WidthRequest="67" HeightRequest="60"
+                                       AbsoluteLayout.LayoutBounds="0.75, 0.6555555"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout WidthRequest="320"
+                            HeightRequest="80"
+                            Grid.Row="3"
+                            Grid.ColumnSpan="2"
+                                VerticalOptions="Start">
+                <skia:SKCanvasView BindingContext="ЧИСЛО ИГР:"
+                                       WidthRequest="300" HeightRequest="60"
+                                       AbsoluteLayout.LayoutBounds="0, 0.5"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+
+                <skia:SKCanvasView BindingContext="999"
+                                       WidthRequest="67" HeightRequest="60"
+                                       AbsoluteLayout.LayoutBounds="0.8, 0.5"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout WidthRequest="320"
+                            HeightRequest="80"
+                            Grid.Row="4"
+                            Grid.ColumnSpan="2"
+                                VerticalOptions="Start">
+                <skia:SKCanvasView BindingContext="ПОБЕДЫ:"
+                                       WidthRequest="300" HeightRequest="60"
+                                       AbsoluteLayout.LayoutBounds="0, 0.5"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+
+                <skia:SKCanvasView BindingContext="999"
+                                       WidthRequest="67" HeightRequest="60"
+                                       AbsoluteLayout.LayoutBounds="0.75, 0.5"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout WidthRequest="320"
+                            HeightRequest="80"
+                            Grid.Row="5"
+                            Grid.ColumnSpan="2"
+                                VerticalOptions="Start">
+                <skia:SKCanvasView BindingContext="ПОРАЖЕНИЯ:"
+                                       WidthRequest="300" HeightRequest="60"
+                                       AbsoluteLayout.LayoutBounds="0, 0.5"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+
+                <skia:SKCanvasView BindingContext="999"
+                                       WidthRequest="67" HeightRequest="60"
+                                       AbsoluteLayout.LayoutBounds="0.85, 0.5"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout WidthRequest="320"
+                            HeightRequest="80"
+                            Grid.Row="6"
+                            Grid.ColumnSpan="2"
+                                VerticalOptions="Start">
+                <skia:SKCanvasView BindingContext="ПОХВАЛА:"
+                                       WidthRequest="300" HeightRequest="60"
+                                       AbsoluteLayout.LayoutBounds="0, 0.5"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+
+                <skia:SKCanvasView BindingContext="999"
+                                       WidthRequest="67" HeightRequest="60"
+                                       AbsoluteLayout.LayoutBounds="0.75, 0.5"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout WidthRequest="170"
+                            HeightRequest="60"
+                            HorizontalOptions="Center"
+                            Grid.Row="7"
+                         Grid.Column="0"
+                                VerticalOptions="Start">
+            <ImageButton Style="{StaticResource imageButtonProfile}"/>
+                <skia:SKCanvasView BindingContext="ПОХВАЛИТЬ:"
+                                       WidthRequest="170" HeightRequest="60"
+                                       AbsoluteLayout.LayoutBounds="0, 0"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout WidthRequest="170"
+                            HeightRequest="60"
+                            HorizontalOptions="Center"
+                            Grid.Row="7"
+                         Grid.Column="1"
+                                VerticalOptions="Start">
+                <ImageButton Style="{StaticResource imageButtonProfile}"/>
+                <skia:SKCanvasView BindingContext="УДАЛИТЬ:"
+                                       WidthRequest="170" HeightRequest="60"
+                                       AbsoluteLayout.LayoutBounds="0, 0"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       PaintSurface="PaintText"/>
+            </AbsoluteLayout>
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

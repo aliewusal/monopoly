@@ -31,6 +31,7 @@ namespace monopoly.ViewModel
         public Command OpenLobbyCommand { get; set; }
         public Command OpenGameCommand { get; set; }
         public Command BackCommand { get; set; }
+        public Command OpenProfileCommand { get; set; }
         public Command OpenFriendsCommand { get; set; }
         public INavigation Navigation { get; set; }
         public MainViewModel(INavigation navigation)
@@ -71,6 +72,7 @@ namespace monopoly.ViewModel
             OpenGameCommand = new Command(async obj => await openGame(obj));
             BackCommand = new Command(async obj => await back(obj));
             OpenFriendsCommand = new Command(async obj => await openFriends(obj));
+            OpenProfileCommand = new Command(async obj => await openProfile(obj));
         }
         private async Task openSettings(object obj)
         {
@@ -92,8 +94,10 @@ namespace monopoly.ViewModel
         {
             await Navigation.PushAsync(new Friends());
         }
-
-
+        private async Task openProfile(object obj)
+        {
+            await Navigation.PushAsync(new Auth());
+        }
 
     }
 }
